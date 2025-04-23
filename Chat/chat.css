@@ -1,0 +1,74 @@
+html,body {
+    margin: 0;
+    font-family: "Fira Code Retina", monospace;
+    color: #93a1a1;
+    height: 100%;
+    width: 100%;
+}
+
+#chatbox {
+    width: calc(100% - 10px);
+    height: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    list-style-type: none;
+    list-style-position: outside;
+    padding: 5px;
+    margin: 0;
+
+}
+
+#chatbox::-webkit-scrollbar {
+    display: none;
+}
+
+#chatbox li {
+    background-color: #073642;
+    box-sizing: border-box;
+    padding: 1rem 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+}
+
+#chatbox li * {
+    min-height: 1lh;
+    padding-right: 5px;
+    display: inline;
+}
+
+.badges {
+    height: 1lh;
+    text-wrap: nowrap;
+}
+
+#chatbox li img {
+    height: 1lh;
+    padding-right: 2px;
+    align-self: baseline;
+}
+
+#chatbox blockquote {
+    font-size: 1.2rem;
+}
+
+@keyframes slide-in-left {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+#chatbox li:last-of-type {
+    animation-name: slide-in-left;
+    animation-duration: 0.30s;
+    animation-timing-function: ease-in;
+}
